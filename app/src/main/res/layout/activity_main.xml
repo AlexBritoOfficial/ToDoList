@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.fragment.app.FragmentContainerView
+<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<androidx.fragment.app.FragmentContainerView
+    android:name="androidx.navigation.fragment.NavHostFragment"
+    app:navGraph="@navigation/to_do_list_graph"
     android:id="@+id/main_fragment_container_view"
+    app:defaultNavHost="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
+</FrameLayout>

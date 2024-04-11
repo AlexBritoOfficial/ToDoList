@@ -1,6 +1,7 @@
 package com.example.todolist
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -11,6 +12,10 @@ import com.example.todolist.entity.PersonalTask
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class TaskListFragment: Fragment(R.layout.task_list) {
+
+    companion object{
+        const val TAG: String = "TaskListFragment"
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,8 +29,11 @@ class TaskListFragment: Fragment(R.layout.task_list) {
         recyclerViewTaskList.adapter = taskListAdapter
 
         floatingActionButton.setOnClickListener { e ->
-            val createTaskFragment = CreateTaskFragment()
 
+            Log.d(TAG, "Button Clicked")
+            val createTaskFragment = CreateTaskFragment()
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.main_fragment_container_view, createTaskFragment)?.commit()
         }
     }
 }
