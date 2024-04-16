@@ -1,5 +1,5 @@
 package com.example.todolist.entity
 
-class ProfessionalTask(taskName: String, priority: Int): Task(taskName, priority) {
+import android.app.ActivityManager.TaskDescription
 
-}
+class ProfessionalTask(taskName: String, taskDescription: String): Task(taskName, taskDescription)
