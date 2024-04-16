@@ -9,9 +9,8 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist.R
 import com.example.todolist.entity.PersonalTask
-import com.example.todolist.entity.Task
 
-class TaskListAdapter(private val dataset: ArrayList<PersonalTask>): RecyclerView.Adapter<TaskListAdapter.ViewHolder>(){
+class TaskListAdapter(private var dataset: ArrayList<PersonalTask>): RecyclerView.Adapter<TaskListAdapter.ViewHolder>(){
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
 
@@ -39,5 +38,9 @@ class TaskListAdapter(private val dataset: ArrayList<PersonalTask>): RecyclerVie
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.taskName.text = dataset.get(position).taskName
         holder.taskDateCreated.text = dataset.get(position).date
+    }
+
+    public fun updateData(data: ArrayList<PersonalTask>){
+        this.dataset = data
     }
 }

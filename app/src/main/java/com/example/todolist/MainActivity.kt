@@ -15,9 +15,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null){
-            val taskListFragment = TaskListFragment()
-            val floatingActionButton = findViewById<FloatingActionButton>(R.id.floating_action_button)
-            supportFragmentManager.beginTransaction().add(R.id.main_fragment_container_view, taskListFragment, TaskListFragment.TAG).commit()
+
         }
 
     }

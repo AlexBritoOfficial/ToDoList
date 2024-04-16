@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/createTaskFragment"
         android:name="com.example.todolist.CreateTaskFragment"
-        android:label="CreateTaskFragment" />
+        android:label="CreateTaskFragment" >
+        <action
+            android:id="@+id/action_createTaskFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+    </fragment>
 </navigation>

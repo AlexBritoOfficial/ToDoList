@@ -8,34 +8,25 @@ import java.util.Calendar
 import java.util.Date
 import java.util.UUID
 
-abstract class Task (taskName: String, priority: Int) {
+abstract class Task(taskName: String?, taskDescription: String?) {
 
     val taskId: String = UUID.randomUUID().toString()
-        get() = field
 
-    var priority: Int = priority
-        get() = field
+    var taskName: String? = taskName
         set(value) {
-            if (value > 0) {
-                value
-            }
-            else {
-                0
-            }
+            value
         }
-
-    var taskName: String = taskName
-        get() = field
+    var taskDescription: String? = taskDescription
         set(value) {
             value
         }
 
     var complete: Boolean = false
-        get() = field
         set(value) {
             value
         }
 
     val date: String = Calendar.getInstance().time.toString()
-        get() = field
+
+    val taskList: ArrayList<PersonalTask> = ArrayList()
 }
