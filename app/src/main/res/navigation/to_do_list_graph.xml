@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/taskListFragment">
 
@@ -11,6 +12,10 @@
         <action
             android:id="@+id/action_taskListFragment_to_createTaskFragment"
             app:destination="@id/createTaskFragment" />
+
+        <action
+            android:id="@+id/action_taskListFragment_to_fragment_task_detail"
+            app:destination="@id/taskDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/createTaskFragment"
@@ -20,4 +25,10 @@
             android:id="@+id/action_createTaskFragment_to_taskListFragment"
             app:destination="@id/taskListFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.example.todolist.TaskDetailFragment"
+        android:label="fragment_task_detail"
+        tools:layout="@layout/fragment_task_detail" />
 </navigation>
