@@ -1,13 +1,11 @@
 package com.example.todolist.viewmodel
 
-import android.app.ActivityManager.TaskDescription
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.todolist.entity.PersonalTask
-import com.example.todolist.entity.ProfessionalTask
 
-class TaskViewModel() : ViewModel() {
+class SharedTaskViewModel() : ViewModel() {
     private lateinit var personalTask : PersonalTask
 
     init {
